@@ -5,7 +5,6 @@
  */
 namespace Nosh\Command;
 
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -16,7 +15,7 @@ use Nosh\Util\DrupalReleaseFetcher;
 /**
  * Command for creating projects (also called platforms).
  */
-class CreateProjectCommand extends Command
+class CreateProjectCommand extends BaseCommand
 {
     var $options = array(
         'profile-name' => 'The name of a profile to create',
@@ -94,12 +93,5 @@ class CreateProjectCommand extends Command
             $input = new ArrayInput($arguments);
             $returnCode = $command->run($input, $output);
         }
-    }
-
-    protected function getTwig()
-    {
-        $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../../templates');
-        $twig = new \Twig_Environment($loader, array('cache' => '/tmp'));
-        return $twig;
     }
 }

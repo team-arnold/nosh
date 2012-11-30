@@ -1,7 +1,6 @@
 <?php
 namespace Nosh\Command;
 
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -11,7 +10,7 @@ use Nosh\Util\DrupalReleaseFetcher;
 /**
  * Command for creating projects (also called platforms).
  */
-class CreateProfileCommand extends Command
+class CreateProfileCommand extends BaseCommand
 {
     protected function configure()
     {
@@ -61,12 +60,5 @@ class CreateProfileCommand extends Command
         file_put_contents($path . '/' . $name . '.install', $twig->render('profile/profile.install', $variables));
         file_put_contents($path . '/' . $name . '.info', $twig->render('profile/profile.info', $variables));
         file_put_contents($path . '/' . $name . '.make', $twig->render('profile/profile.make', $variables));
-    }
-
-    protected function getTwig()
-    {
-        $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../../templates');
-        $twig = new \Twig_Environment($loader, array());
-        return $twig;
     }
 }
