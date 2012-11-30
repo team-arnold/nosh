@@ -42,7 +42,8 @@ class CreateProfileCommandTest extends \PHPUnit_Framework_TestCase
     /**
      * Clean up after ourselves.
      */
-    function tearDown() {
+    function tearDown()
+    {
         $dir = __DIR__ . '/testprofile';
         if (is_dir($dir)) {
             exec("rm -rf $dir");
