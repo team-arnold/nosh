@@ -5,7 +5,6 @@
  */
 namespace Nosh\Command;
 
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -16,7 +15,7 @@ use Nosh\Util\DrupalReleaseFetcher;
 /**
  * Command for creating projects (also called platforms).
  */
-class CreateProjectCommand extends Command
+class CreateProjectCommand extends BaseCommand
 {
     var $options = array(
         'profile-name' => 'The name of a profile to create',
@@ -36,35 +35,32 @@ class CreateProjectCommand extends Command
         $this->addOption('use-vagrant', null, InputOption::VALUE_NONE, "Use vagrant for this project");
         $this->addOption('create-profile', null, InputOption::VALUE_NONE, "Create an installation profile");
         $this->addOption('build-profile', null, InputOption::VALUE_NONE, "Build the installation profile");
-
         $this->addOption('api', null, InputOption::VALUE_OPTIONAL, 'API version. Defaults to 7.x', '7.x');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $path = $input->getArgument('path');
+        $quiet = $input->getOption('no-interaction');
         if (is_dir($path)) {
             throw new \Exception("The directory already exists.");
         }
         mkdir($path);
         $dialog = $this->getHelperSet()->get('dialog');
         $twig = $this->getTwig();
-        $name = basename($path);
         // Fetch Drupal.
-        $returnVal = 1;
         $output->writeln("Fetching Drupal");
         $fetcher = new DrupalReleaseFetcher();
         $api = $input->getOption('api');
         $release = $fetcher->getReleaseInfo('drupal', $api)->currentRelease();
         $drupalIdentifier = "drupal-{$release['version']}";
-        passthru("drush dl $drupalIdentifier --destination={$path}", $returnVal);
-        if ($returnVal) {
-            throw new \Exception("Could not download Drupal.");
-        }
-        passthru("mv {$path}/{$drupalIdentifier} {$path}/web");
-        if ($api == '7.x' && ($input->getOption('create-profile') || $dialog->askConfirmation($output, '<question>Do you want to create an installation profile?</question> '))) {
+        $this->executeExternalCommand("drush dl $drupalIdentifier --destination={$path}", $output);
+        $this->executeExternalCommand("mv {$path}/{$drupalIdentifier} {$path}/web", $output);
+        if ($api == '7.x' && ($input->getOption('create-profile') || (!$quiet && $dialog->askConfirmation($output, '<question>Do you want to create an installation profile?</question> ')))) {
             $arguments = array(
                 'command' => 'create-profile',
+                '--title' => $input->getOption('profile-title'),
+                '--description' => $input->getOption('profile-description'),
             );
             $profile_name = $input->getOption('profile-name');
             if (empty($profile_name)) {
@@ -74,17 +70,17 @@ class CreateProjectCommand extends Command
             $command = $this->getApplication()->find('create-profile');
             $cmdInput = new ArrayInput($arguments);
             $returnCode = $command->run($cmdInput, $output);
-            if ($input->getOption('build-profile') ||  $dialog->askConfirmation($output, '<question>Do you want to build your profile now?</question> ')) {
+            if ($input->getOption('build-profile') || (!$quiet && $dialog->askConfirmation($output, '<question>Do you want to build your profile now?</question> '))) {
                 $output->writeln("Building installation profile...");
-                passthru("drush make -y --no-core --contrib-destination={$profile_path} {$profile_path}/{$profile_name}.make");
+                $this->executeExternalCommand("drush make -y --no-core --contrib-destination={$profile_path} {$profile_path}/{$profile_name}.make", $output);
             }
         }
         $variables = array('core_version' => '7.15');
         file_put_contents($path . '/' . 'platform.make', $twig->render('project/platform.make', $variables));
         file_put_contents($path . '/' . '.gitignore', $twig->render('project/gitignore', $variables));
         file_put_contents($path . '/' . 'build', $twig->render('project/build', $variables));
-        exec('chmod +x ' . $path . '/' . 'build');
-        if ($input->getOption('use-vagrant') || $dialog->askConfirmation($output, '<question>Do you want to use vagrant for this project?</question> ')) {
+        $this->executeExternalCommand('chmod +x ' . $path . '/' . 'build', $output);
+        if ($input->getOption('use-vagrant') || (!$quiet && $dialog->askConfirmation($output, '<question>Do you want to use vagrant for this project?</question> '))) {
             $command = $this->getApplication()->find('vagrantify');
             $arguments = array(
                 'command' => 'create-profile',
@@ -93,12 +89,5 @@ class CreateProjectCommand extends Command
             $input = new ArrayInput($arguments);
             $returnCode = $command->run($input, $output);
         }
-    }
-
-    protected function getTwig()
-    {
-        $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../../templates');
-        $twig = new \Twig_Environment($loader, array('cache' => '/tmp'));
-        return $twig;
     }
 }

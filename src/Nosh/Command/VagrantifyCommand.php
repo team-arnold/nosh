@@ -1,7 +1,6 @@
 <?php
 namespace Nosh\Command;
 
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -9,7 +8,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Command for creating projects (also called platforms).
  */
-class VagrantifyCommand extends Command
+class VagrantifyCommand extends BaseCommand
 {
     protected $variableOptions = array(
         'webroot',
@@ -58,11 +57,11 @@ class VagrantifyCommand extends Command
         foreach ($modules as $name => $module) {
             $module_path = "manifests/modules/$name";
             if (is_dir($module_path)) {
-                exec("rm -rf {$module_path}");
+                $this->executeExternalCommand("rm -rf {$module_path}", $output);
             }
-            exec("git clone $module $module_path");
+            $this->executeExternalCommand("git clone $module $module_path", $output);
             // Remove the git repository to avoid conflicts.
-            exec("rm -rf $module_path/.git");
+            $this->executeExternalCommand("rm -rf $module_path/.git", $output);
         }
         $variables = array();
         foreach ($this->variableOptions as $option) {
@@ -71,12 +70,5 @@ class VagrantifyCommand extends Command
         // Generate vagrantfile and manifest.
         file_put_contents('Vagrantfile', $twig->render("vagrant/Vagrantfile", $variables));
         file_put_contents('manifests/manifest.pp', $twig->render("vagrant/manifest.pp", $variables));
-    }
-
-    protected function getTwig()
-    {
-        $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../../templates');
-        $twig = new \Twig_Environment($loader, array());
-        return $twig;
     }
 }

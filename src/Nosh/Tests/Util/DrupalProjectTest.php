@@ -24,6 +24,6 @@ class DrupalProjectTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($project->link, "http://drupal.org/project/drupal");
         // Check that the current release is the right one, 7.17.
         $this->assertEquals($project->current['version'], '7.17');
-        $this->releases = array();        
+        $this->releases = array();
     }
 }
