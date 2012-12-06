@@ -22,33 +22,34 @@ class TemplateEngineTest extends \PHPUnit_Framework_TestCase
         $template = new TemplateEngine($template_dirs);
         // One of the templates only exists in one of the template directories.
         // That template should be loaded automaticly.
-        $this->assertEquals('unique file',
+        $this->assertEquals("unique file\n",
             $template->render('templates2unique'));
         // The first template directory in the array
         // takes priority, allowing overrides.
-        $this->assertEquals('overridden file',
+        $this->assertEquals("overridden file\n",
             $template->render('overrideme'));
         // It is possible to specify the theme to use.
         // Specifying a function to the use method will use that theme
         // for everything that is going on during the function.
-        $template->use('templates', function() {
-                $this->assertEquals('default file',  $template->render('default'));
+        $class = $this;
+        $template->useTheme('templates', function() use($class, $template) {
+                $class->assertEquals("default file\n",  $template->render('overrideme'));
         });
         // After the use function has executed, we are back to normal.
-        $this->assertEquals('overridden file',
+        $this->assertEquals("overridden file\n",
             $template->render('overrideme'));
         // Specifying which theme to use without a function permanently sets
         // the theme that is used.
-        $template->use('templates');
-        $this->assertEquals('default file',  $template->render('default'));
+        $template->useTheme('templates');
+        $this->assertEquals("default file\n", $template->render('overrideme'));
 
         // Use all themes again by calling the useAll() method.
         $template->useAll();
 
         // Add more themes.
         $template->addTheme('templates3', __DIR__ . '/templates3');
-        $this->assertEquals('template 3 template', $template->render('templates3template'));
+        $this->assertEquals("template 3 template\n", $template->render('templates3template'));
         // Pass variables to templates.
-        $this->assertEquals('test variable', $template->render('vartemplate', array('var' => 'test variable')));
+        $this->assertEquals("test variable\n", $template->render('vartemplate', array('var' => 'test variable')));
     }
 }
