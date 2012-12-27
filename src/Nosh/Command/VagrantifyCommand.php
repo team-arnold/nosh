@@ -41,6 +41,7 @@ class VagrantifyCommand extends BaseCommand
             'mysql' => 'https://github.com/nodeone/puppet-mysql.git',
             'php' => 'https://github.com/nodeone/puppet-php.git',
             'postfix' => 'https://github.com/nodeone/puppet-postfix.git',
+            'mongodb' => 'https://github.com/WKLive/puppet-mongodb.git',
         );
         $path = $input->getOption('path');
         chdir($path);
