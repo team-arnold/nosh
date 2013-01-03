@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<r xmlns="http://pear.php.net/dtd/rest.release" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://pear.php.net/dtd/rest.release http://pear.php.net/dtd/rest.release.xsd">
+    <p xlink:href="/rest/p/nosh">Nosh</p>
+    <c>wklive.github.com/nosh</c>
+    <v>0.1.0</v>
+    <st>alpha</st>
+    <l>GPL</l>
+    <m>fabsor</m>
+    <s>Nosh is CLI tool for creating NodeStream installation profiles.</s>
+    <d>Nosh is CLI tool for creating NodeStream installation profiles.</d>
+    <da>2013-01-03 14:31:48</da>
+    <n>
+-
+ </n>
+    <f>1967</f>
+    <g>http://wklive.github.com/nosh/get/Nosh-0.1.0</g>
+    <x xlink:href="package.0.1.0.xml"/>
+</r>
