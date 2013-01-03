@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<server>
+  <name>nosh.github.com</name>
+  <summary>Nosh pear channel</summary>
+  <alias>nosh</alias>
+  <url>http://nosh.github.com/</url>
+</server>
