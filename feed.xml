@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://pear.wklive.net</id>
-    <updated>2013-01-03T14:51:45+01:00</updated>
-    <title>Wunderkraut pear channel Latest Releases</title>
-    <link href="http://pear.wklive.net/feed.xml" rel="self" />
+    <id>http://wklive.github.com/nosh</id>
+    <updated>2013-01-03T15:13:57+01:00</updated>
+    <title>Nosh pear channel Latest Releases</title>
+    <link href="http://wklive.github.com/nosh/feed.xml" rel="self" />
     <author>
-        <name>http://pear.wklive.net</name>
+        <name>http://wklive.github.com/nosh</name>
     </author>
 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <server>
-  <name>nosh.github.com</name>
+  <name>wklive.github.com/nosh</name>
   <summary>Nosh pear channel</summary>
   <alias>nosh</alias>
-  <url>http://nosh.github.com/</url>
+  <url>http://wklive.github.com/nosh</url>
 </server>
