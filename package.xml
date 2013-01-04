@@ -10,8 +10,8 @@
     <email>fabian.sorqvist@wunderkraut.com</email>
     <active>yes</active>
   </lead>
-  <date>2013-01-04</date>
-  <time>10:44:40</time>
+  <date>2013-01-03</date>
+  <time>23:46:57</time>
   <version>
     <release>0.1.0</release>
     <api>0.1.0</api>
@@ -44,7 +44,7 @@
       <file name="src/Nosh/Tests/Util/TemplateTest.php" role="php" md5sum="2d5a7aa6c37949e59b9b5a673e71867e"/>
       <file name="src/Nosh/Tests/Util/DrupalProjectTest.php" role="php" md5sum="df1c8318aa3d6b153f73a4867199b0ba"/>
       <file name="src/Nosh/Tests/Util/templates/overrideme" role="php" md5sum="b65a275266559bf3caf91fa2d65d77ac"/>
-      <file name="nosh.php" role="script" md5sum="db9ab2b59d694316e2704d46d6132d12"/>
+      <file name="nosh.php" role="script" md5sum="39950f587a078d82cf3c9faa55e24730"/>
       <file name="vendor/autoload.php" role="php" md5sum="0b946d82beb332e9d1292f7a947bd62e"/>
       <file name="vendor/symfony/process/Symfony/Component/Process/CHANGELOG.md" role="php" md5sum="836dff6942bf7013bce1ae48bd511d69"/>
       <file name="vendor/symfony/process/Symfony/Component/Process/ProcessBuilder.php" role="php" md5sum="7b9bf10ba71e3cdab526c1a2bc41adfa"/>
@@ -579,15 +579,15 @@
       <file name="vendor/twig/twig/AUTHORS" role="php" md5sum="20075d1017c3c5f597e16a017e37e499"/>
       <file name="vendor/twig/twig/.gitignore" role="php" md5sum="e8e8b05dcada28af47c4a7f92a2106c0"/>
       <file name="vendor/twig/twig/.travis.yml" role="php" md5sum="f53e5fd2a200fa4605a33cbbf15caade"/>
-      <file name="templates/project/platform.make" role="php" md5sum="2244edd91a53bd366183827da6309f8c"/>
-      <file name="templates/project/gitignore" role="php" md5sum="afa08fe9421df17ee2d9db96a6703249"/>
-      <file name="templates/project/build" role="php" md5sum="1fe4fcbb4411e27de9e832790a45f5f0"/>
-      <file name="templates/profile/profile.profile" role="php" md5sum="c1d513793b77b1f6e7352d50b8707ba0"/>
-      <file name="templates/profile/profile.make" role="php" md5sum="375f2b41ecf4e439a765b298ef750fe0"/>
-      <file name="templates/profile/profile.info" role="php" md5sum="f7148576d1df58834b4196a4a592492f"/>
-      <file name="templates/profile/profile.install" role="php" md5sum="402096548f3c91ac33e01ae84ea710d6"/>
-      <file name="templates/vagrant/Vagrantfile" role="php" md5sum="56c2e4474135ae35512cd6268c5d63f4"/>
-      <file name="templates/vagrant/manifest.pp" role="php" md5sum="0d09c1f75e8b86f8565e9d108fefce74"/>
+      <file name="templates/project/platform.make" role="data" md5sum="2244edd91a53bd366183827da6309f8c"/>
+      <file name="templates/project/gitignore" role="data" md5sum="afa08fe9421df17ee2d9db96a6703249"/>
+      <file name="templates/project/build" role="data" md5sum="1fe4fcbb4411e27de9e832790a45f5f0"/>
+      <file name="templates/profile/profile.profile" role="data" md5sum="c1d513793b77b1f6e7352d50b8707ba0"/>
+      <file name="templates/profile/profile.make" role="data" md5sum="375f2b41ecf4e439a765b298ef750fe0"/>
+      <file name="templates/profile/profile.info" role="data" md5sum="f7148576d1df58834b4196a4a592492f"/>
+      <file name="templates/profile/profile.install" role="data" md5sum="402096548f3c91ac33e01ae84ea710d6"/>
+      <file name="templates/vagrant/Vagrantfile" role="data" md5sum="56c2e4474135ae35512cd6268c5d63f4"/>
+      <file name="templates/vagrant/manifest.pp" role="data" md5sum="0d09c1f75e8b86f8565e9d108fefce74"/>
     </dir>
   </contents>
   <dependencies>
