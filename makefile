@@ -1,4 +1,4 @@
-phar: nosh.phar
+phar:
 	bin/build_phar.php
 	chmod +x nosh.phar
 
