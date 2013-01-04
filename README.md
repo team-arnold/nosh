@@ -10,6 +10,26 @@ NodeStream shell is a set of tools that can be used to easily get going with dev
 * curl (on Linux <code> sudo apt-get install curl</code>)
 
 ## Installing
+
+### Through PEAR
+We have a pear channel set up.
+
+    pear channel-discover wklive.github.com/nosh
+	pear install nosh/nosh-0.1.0
+	nosh.phar
+
+### Automatic install script
+
+With curl:
+    
+	curl -L https://github.com/WKLive/nosh/raw/master/install.sh | sh
+
+Or with wget:
+
+    wget --no-check-certificate https://github.com/WKLive/nosh/raw/master/install.sh -O - | sh
+	
+
+### Manually
 * Clone the repository
 
                 git clone git@github.com:WKLive/nosh.git ~/nosh
