@@ -17,6 +17,11 @@ then
   ./composer.phar install
 
   echo -e "\033[0;34mSymlinking nosh to bin\033[0m"
+  if [ -h /usr/bin/nosh ]
+  then
+    echo -e "\033[0;33mExisting symlink detected, please confirm removal of it\033[0m"
+    sudo rm /usr/bin/nosh
+  fi
   sudo ln -s ~/nosh/nosh.php /usr/bin/nosh
   echo -e "\033[0;34mAdding nosh to your PATH...\033[0m"
   export PATH="$PATH:$NOSHLOCATION/nosh:/usr/local/bin"
