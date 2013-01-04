@@ -3,7 +3,7 @@
   <name>Nosh</name>
   <channel>wklive.github.com/nosh</channel>
   <summary>NodeStream Shell</summary>
-  <description>NodeStream Shell makes it easier to create a lot of boilerplate code in Drupal projects.</description>
+  <description>NodeStream Shell provides makes it easier to create a lot of boilerplate code in Drupal projects.</description>
   <lead>
     <name>Fabian S&#xF6;rqvist</name>
     <user/>
@@ -11,7 +11,7 @@
     <active>yes</active>
   </lead>
   <date>2013-01-04</date>
-  <time>10:52:06</time>
+  <time>10:44:40</time>
   <version>
     <release>0.1.0</release>
     <api>0.1.0</api>
@@ -44,7 +44,7 @@
       <file name="src/Nosh/Tests/Util/TemplateTest.php" role="php" md5sum="2d5a7aa6c37949e59b9b5a673e71867e"/>
       <file name="src/Nosh/Tests/Util/DrupalProjectTest.php" role="php" md5sum="df1c8318aa3d6b153f73a4867199b0ba"/>
       <file name="src/Nosh/Tests/Util/templates/overrideme" role="php" md5sum="b65a275266559bf3caf91fa2d65d77ac"/>
-      <file name="nosh.php" role="script" md5sum="39950f587a078d82cf3c9faa55e24730"/>
+      <file name="nosh.php" role="script" md5sum="db9ab2b59d694316e2704d46d6132d12"/>
       <file name="vendor/autoload.php" role="php" md5sum="0b946d82beb332e9d1292f7a947bd62e"/>
       <file name="vendor/symfony/process/Symfony/Component/Process/CHANGELOG.md" role="php" md5sum="836dff6942bf7013bce1ae48bd511d69"/>
       <file name="vendor/symfony/process/Symfony/Component/Process/ProcessBuilder.php" role="php" md5sum="7b9bf10ba71e3cdab526c1a2bc41adfa"/>
