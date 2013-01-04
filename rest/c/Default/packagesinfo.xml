@@ -6,8 +6,8 @@
             <c>wklive.github.com/nosh</c>
             <ca xlink:href="/rest/c/Default">Default</ca>
             <l>GPL</l>
-            <s>Nosh is CLI tool for creating NodeStream installation profiles.</s>
-            <d>Nosh is CLI tool for creating NodeStream installation profiles.</d>
+            <s>NodeStream Shell.</s>
+            <d>Nosh is a CLI tool for easily creating boilerplate code for NodeStream installation profiles.</d>
             <r xlink:href="/rest/r/nosh" />
         </p>
 

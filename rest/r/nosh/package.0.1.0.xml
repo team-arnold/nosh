@@ -2,16 +2,16 @@
 <package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
  <name>Nosh</name>
  <channel>wklive.github.com/nosh</channel>
- <summary>Nosh is CLI tool for creating NodeStream installation profiles.</summary>
- <description>Nosh is CLI tool for creating NodeStream installation profiles.</description>
+ <summary>NodeStream Shell.</summary>
+ <description>Nosh is a CLI tool for easily creating boilerplate code for NodeStream installation profiles.</description>
  <lead>
   <name>Fabian Sörqvist</name>
   <user>fabsor</user>
   <email>fabian.sorqvist@wunderkraut.com</email>
   <active>yes</active>
  </lead>
- <date>2013-01-03</date>
- <time>14:31:48</time>
+ <date>2013-01-04</date>
+ <time>13:05:00</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
@@ -27,7 +27,7 @@
  <contents>
   <dir name="/">
    <file md5sum="94666dc5d6abb9ab43738734351b4b52" name="README.md" role="doc" />
-   <file baseinstalldir="/" md5sum="39950f587a078d82cf3c9faa55e24730" name="nosh.php" role="script" />
+   <file baseinstalldir="/" md5sum="7040e7508098a2594f6bda7fb7cc4b16" name="nosh.phar" role="script" />
   </dir>
  </contents>
  <dependencies>

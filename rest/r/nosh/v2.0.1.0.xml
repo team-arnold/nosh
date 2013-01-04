@@ -8,13 +8,13 @@
     <st>alpha</st>
     <l>GPL</l>
     <m>fabsor</m>
-    <s>Nosh is CLI tool for creating NodeStream installation profiles.</s>
-    <d>Nosh is CLI tool for creating NodeStream installation profiles.</d>
-    <da>2013-01-03 14:31:48</da>
+    <s>NodeStream Shell.</s>
+    <d>Nosh is a CLI tool for easily creating boilerplate code for NodeStream installation profiles.</d>
+    <da>2013-01-04 13:05:00</da>
     <n>
 -
  </n>
-    <f>73493</f>
+    <f>73491</f>
     <g>http://wklive.github.com/nosh/get/Nosh-0.1.0</g>
     <x xlink:href="package.0.1.0.xml"/>
 </r>
