@@ -1,12 +1,12 @@
 if [ -d ~/nosh ]
 then
-  echo -e "\033[0;33mYou already have nosh installed.\033[0m You'll need to remove ~/nosh if you want to install"
+  printf '\033[0;33m%s\033[0m%s\n' 'You already have nosh installed.' 'You will need to remove ~/nosh if you want to install'
   exit
 fi
 
-echo -e "\033[0;34mCloning nosh...\033[0m"
+printf '\033[0;34m%s\033[0m\n' 'Cloning nosh...'
 hash git >/dev/null && /usr/bin/env git clone https://github.com/WKLive/nosh.git ~/nosh || {
-  echo -e "git not installed."
+  printf 'git not installed.'
   exit
 }
 
@@ -16,18 +16,23 @@ then
   
   ./composer.phar install
 
-  echo -e "\033[0;34mSymlinking nosh to bin\033[0m"
+  printf '\033[0;34m%s\033[0m\n' 'Symlinking nosh to bin'
+  if [ -h /usr/bin/nosh ]
+  then
+    printf '\033[0;33m%s\033[0m\n' 'Existing symlink detected, please confirm removal of it'
+    sudo rm /usr/bin/nosh
+  fi
   sudo ln -s ~/nosh/nosh.php /usr/bin/nosh
-  echo -e "\033[0;34mAdding nosh to your PATH...\033[0m"
+  printf '\033[0;34m%s\033[0m\n' 'Adding nosh to your PATH...'
   export PATH="$PATH:$NOSHLOCATION/nosh:/usr/local/bin"
 
   popd > /dev/null;
 fi
 
-echo -e "\033[0;32m"'                       __   '"\033[0m"
-echo -e "\033[0;32m"'    ____  ____   _____/ /_  '"\033[0m"
-echo -e "\033[0;32m"'   / __ \/ __ \ / ___/ __ \ '"\033[0m"
-echo -e "\033[0;32m"'  / / / / /_/ /(__  ) / / / '"\033[0m"
-echo -e "\033[0;32m"' /_/ /_/\____/ /___/_/ /_/  '"\033[0m"
-echo -e "\n \033[0;32m....is now installed and ready to be used.\033[0m"
+printf '\033[0;32m%s\033[0m\n' '                       __   '
+printf '\033[0;32m%s\033[0m\n' '    ____  ____   _____/ /_  '
+printf '\033[0;32m%s\033[0m\n' '   / __ \/ __ \ / ___/ __ \ '
+printf '\033[0;32m%s\033[0m\n' '  / / / / /_/ /(__  ) / / / '
+printf '\033[0;32m%s\033[0m\n' ' /_/ /_/\____/ /___/_/ /_/  '
+printf '\n \033[0;32m%s\033[0m\n' '....is now installed and ready to be used.'
 
