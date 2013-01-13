@@ -10,7 +10,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\OutputInterface;
-use Nosh\Util\DrupalReleaseFetcher;
+use Fabsor\DrupalReleaseApi\HTTPReleaseFetcher;
 
 /**
  * Command for creating projects (also called platforms).
@@ -50,9 +50,9 @@ class CreateProjectCommand extends BaseCommand
         $twig = $this->getTwig();
         // Fetch Drupal.
         $output->writeln("Fetching Drupal");
-        $fetcher = new DrupalReleaseFetcher();
+        $fetcher = new HTTPReleaseFetcher();
         $api = $input->getOption('api');
-        $release = $fetcher->getReleaseInfo('drupal', $api)->currentRelease();
+        $release = $fetcher->getReleaseInfo('drupal', $api)->getCurrentRelease();
         $drupalIdentifier = "drupal-{$release['version']}";
         $this->executeExternalCommand("drush dl $drupalIdentifier --destination={$path}", $output);
         $this->executeExternalCommand("mv {$path}/{$drupalIdentifier} {$path}/web", $output);

@@ -5,7 +5,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Nosh\Util\DrupalReleaseFetcher;
+use Fabsor\DrupalReleaseApi\HTTPReleaseFetcher;
 
 /**
  * Command for creating projects (also called platforms).
@@ -41,8 +41,8 @@ class CreateProfileCommand extends BaseCommand
         $name = basename($path);
         $twig = $this->getTwig();
         // What's the latest release of NS Core?
-        $fetcher = new DrupalReleaseFetcher();
-        $release = $fetcher->getReleaseInfo('ns_core', '7.x')->currentRelease();
+        $fetcher = new HTTPReleaseFetcher();
+        $release = $fetcher->getReleaseInfo('ns_core', '7.x')->getCurrentRelease();
         $version = "{$release['major']}.{$release['patch']}";
         if (!empty($release['extra'])) {
             $version .= "-{$release['extra']}";
