@@ -9,7 +9,7 @@
     ],
     "require": {
       "twig/twig": "1.*",
-      "fabsor/drupal-release-api": "dev-master"
+      "fabsor/drupal-release-api": "dev-master",
       "symfony/console": "2.*",
       "symfony/process": "2.*",
       "symfony/finder": "2.*"
