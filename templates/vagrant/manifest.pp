@@ -1,6 +1,8 @@
 class { 'systools': }
 class { 'apache': }
-class { 'php': }
+class { 'php':
+  development => true
+}
 class { 'drush': }
 class { 'postfix': }
 class { 'mongodb': }
