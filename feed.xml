@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wklive.github.com/nosh</id>
-    <updated>2013-01-04T14:05:55+01:00</updated>
+    <updated>2013-02-22T09:40:43+01:00</updated>
     <title>Nosh pear channel Latest Releases</title>
     <link href="http://wklive.github.com/nosh/feed.xml" rel="self" />
     <author>
@@ -9,6 +9,19 @@
     </author>
 
     <entry>
+        <title>Nosh 0.1.1 (alpha)</title>
+        <link href="http://wklive.github.com/nosh/get/Nosh-0.1.1.tgz" />
+        <id>http://wklive.github.com/nosh/get/Nosh-0.1.1.tgz</id>
+        <author>
+            <name>fabsor</name>
+        </author>
+        <updated>2013-02-22T08:39:30+01:00</updated>
+        <content>
+            
+-
+ 
+        </content>
+    </entry>    <entry>
         <title>Nosh 0.1.0 (alpha)</title>
         <link href="http://wklive.github.com/nosh/get/Nosh-0.1.0.tgz" />
         <id>http://wklive.github.com/nosh/get/Nosh-0.1.0.tgz</id>
