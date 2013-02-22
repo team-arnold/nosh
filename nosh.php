@@ -9,7 +9,7 @@ use Nosh\Command\CreateProfileCommand;
 use Nosh\Command\VagrantifyCommand;
 
 
-$application = new Application("Nodestream Shell", "0.1");
+$application = new Application("Nodestream Shell", "0.1.1");
 $application->add(new CreateProjectCommand);
 $application->add(new VagrantifyCommand);
 $application->add(new CreateProfileCommand);
