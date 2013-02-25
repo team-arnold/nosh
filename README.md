@@ -80,7 +80,7 @@ Mac OS X GUI hint: [Hosts.prefpane](https://github.com/specialunderwear/Hosts.pr
 * user: vagrant
 * pass: vagrant
 
-### Setting up a drush alias to work with vagrant boxes
+## Setting up a drush alias to work with vagrant boxes
 
 Download the private vagrant ssh key [here](https://raw.github.com/mitchellh/vagrant/master/keys/vagrant), then create an alias in ~/.drush/aliases.drushrc.php:
 
