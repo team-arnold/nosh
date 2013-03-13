@@ -6,6 +6,7 @@ class { 'php':
 class { 'drush': }
 class { 'postfix': }
 class { 'mongodb': }
+class { 'bundler': }
 
 
 class { 'mysql':
@@ -13,4 +14,7 @@ class { 'mysql':
   hostname => "{{ hostname }}"
 }
 
-apache::vhost { "drupal": }
+{% for host in vhost %}
+file { "/etc/apache2/sites-enabled/{{ host.basename }}": ensure => 'link', target => "{{nfsroot}}/{{ host.path }}" }
+{% else %}
+{% endfor %}

@@ -9,7 +9,7 @@ Vagrant::Config.run do |config|
     # Assign this VM to a host only network IP, allowing you to access it
     # via the IP.
     config.vm.network :hostonly, "{{ ip }}"
-    config.vm.customize ["modifyvm", :id, "--memory", "768"]
+    config.vm.customize ["modifyvm", :id, "--memory", "2048"]
     config.vm.host_name = "{{ hostname }}"
 
     # Provisioning settings.
@@ -19,5 +19,5 @@ Vagrant::Config.run do |config|
       puppet.module_path = "manifests/modules"
     end
     # The path to the platform
-    config.vm.share_folder("v-root", "/var/www", "{{ webroot }}", :nfs => true)
+    config.vm.share_folder("v-root", "{{ nfsroot }}", "{{ webroot }}", :nfs => true)
 end

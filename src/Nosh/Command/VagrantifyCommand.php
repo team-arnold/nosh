@@ -15,8 +15,10 @@ class VagrantifyCommand extends BaseCommand
         'ip',
         'hostname',
         'boxname',
-        'boxurl'
+        'boxurl',
+        'nfsroot',
     );
+
     protected function configure()
     {
         $this->setName('vagrantify')
@@ -26,7 +28,8 @@ class VagrantifyCommand extends BaseCommand
             ->addOption('webroot', null, InputOption::VALUE_OPTIONAL, "The drupal web root. Defaults to web.", './web')
             ->addOption('ip', null, InputOption::VALUE_OPTIONAL, "IP Address of the new box. Defaults to 192.168.50.2", "192.168.50.2")
             ->addOption('boxname', null, InputOption::VALUE_OPTIONAL, "Box name. Defaults to precise64.", 'precise64')
-            ->addOption('boxurl', null, InputOption::VALUE_OPTIONAL, "Box URL. Defaults to http://files.vagrantup.com/precise64.box", 'http://files.vagrantup.com/precise64.box');
+            ->addOption('boxurl', null, InputOption::VALUE_OPTIONAL, "Box URL. Defaults to http://files.vagrantup.com/precise64.box", 'http://files.vagrantup.com/precise64.box')
+            ->addOption('nfsroot', null, InputOption::VALUE_OPTIONAL, "NFS mount point on the virtual machine.", '/var/www');
 
 
     }
@@ -42,6 +45,7 @@ class VagrantifyCommand extends BaseCommand
             'php' => 'https://github.com/nodeone/puppet-php.git',
             'postfix' => 'https://github.com/nodeone/puppet-postfix.git',
             'mongodb' => 'https://github.com/WKLive/puppet-mongodb.git',
+            'bundler' => 'git@github.com:nodeone/puppet-bundler.git'
         );
         $path = $input->getOption('path');
         chdir($path);
