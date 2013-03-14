@@ -24,6 +24,7 @@ NodeStream shell is a set of tools that can be used to easily get going with dev
 
                 curl -s getcomposer.org/installer | php -d detect_unicode=Off -d date.timezone=UTC
 
+* the file may end up in your home directory, if so, move it to the nosh-directory
 
 * Install Composer
 
@@ -33,7 +34,7 @@ NodeStream shell is a set of tools that can be used to easily get going with dev
 
 * Symlink Nosh to your bin
 
-                sudo ln -s ~/Nosh/nosh.php /usr/bin/nosh
+                sudo ln -s ~/nosh/nosh.php /usr/bin/nosh
 
 
 ### Caveats
@@ -91,7 +92,7 @@ Download the private vagrant ssh key [here](https://raw.github.com/mitchellh/vag
 
 # Nosh - The Arnold way
 
-**ALERT: For "The Arnold way" to work your workspace will be: /home/user/projects
+**ALERT: For "The Arnold way" to work your workspace will be: ~/projects
 That is were you will pull down your projects**
 
 ### Install Nosh
@@ -133,16 +134,12 @@ add the following:
 
 ### Installation on a project already vagrantified
 
-* Get a drush alias to enable drush access from your local environment
-* run the script nosh_key_setup.sh found in this repo to download the ssh-key for vagrant
-* **ALERT: By whatnot reason this key fails on my computer, I just “vagrant ssh” and add one of my pubkeys to authorized_keys and everything works dandy fine!**
-* run the script  site-alias.sh and add sitenumber as first argument and sitenumber again but with a dot as second argument. Example: 
+* Get a drush alias to enable drush access from your local environment by running the script  site-alias.sh found in the nosh repo and add sitenumber as first argument and sitenumber again but with a dot as second argument. Example: 
 
                 ./site_alias.sh 257 25.7
 
-* You use the alias by simply adding “@xxx” after drush. ex; 
-
-                drush @257 cc all
+* run the script nosh_key_setup.sh found in this repo to download the ssh-key for vagrant
+* **ALERT: By whatnot reason this key fails on my computer, I just “vagrant ssh” and add one of my pubkeys to authorized_keys and everything works dandy fine!**
 
 * Create a directory for your projects and Clone that shit!
 * Type:
@@ -153,6 +150,10 @@ add the following:
 * For build simply go to where your buildscript is and:
 
                 ./build
+
+* For usage of the drush-alias you simply typ "drush" adding “@xxx” after drush. ex; 
+
+                drush @257 cc all
 
 * For install type: 
         
