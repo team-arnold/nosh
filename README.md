@@ -1,5 +1,7 @@
 # NodeStream Shell
 
+# [Nosh - The Arnold way](https://github.com/team-arnold/nosh#nosh---the-arnold-way)
+
 NodeStream shell is a set of tools that can be used to easily get going with developing NodeStream-based profiles and projects.
 
 ## Dependencies
@@ -104,7 +106,7 @@ Download the private vagrant ssh key [here](https://raw.github.com/mitchellh/vag
                 vagrant up
 
 
-## Nosh - The Arnold way
+# Nosh - The Arnold way
 
 ### Install Nosh
 * Follow the above install instructions
