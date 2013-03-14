@@ -104,12 +104,12 @@ Download the private vagrant ssh key [here](https://raw.github.com/mitchellh/vag
                 vagrant up
 
 
-### Nosh - The Arnold way
+## Nosh - The Arnold way
 
-## Install Nosh
+### Install Nosh
 * Follow the above install instructions
 
-## Preinstallation for Team Arnold, if you want to contribute to [repo](https://github.com/team-arnold/nosh)
+### Preinstallation for Team Arnold, if you want to contribute to [repo](https://github.com/team-arnold/nosh)
 1. We need to generate a unique SSH key for our second GitHub account.
                 
                 ssh-keygen -t rsa -C "team-arnold"
@@ -143,6 +143,45 @@ add the following:
 
 5. Add that and write a funny commit message and push it like its hot!
 
-## Installation on a project allready vagrantified
+### Installation on a project allready vagrantified
 
-1. Get
+1. Get a drush alias to enable drush access from your local environment
+    a. run the script nosh_key_setup.sh found in this repo to download the ssh-key for vagrant
+    b. **ALERT: By whatnot reason this key fails on my computer, I just “vagrant ssh” and add one of my pubkeys to authorized_keys and everything works dandy fine!**
+    c. run the script  site-alias.sh and add sitenumber as first argument and sitenumber again but with a dot as second argument. Example: 
+
+                ./site_alias.sh 257 25.7
+
+    d. You use the alias by simply adding “@xxx” after drush. ex; 
+
+                drush @257 cc all
+
+2. Create a directory for your projects and Clone that shit!
+3. Type:
+
+                vagrant up
+
+    and all the puppet modules and sweet stuff for the box will be created for you!
+4. For build simply go to where your buildscript is and:
+
+                ./build
+
+5. For install type: 
+        
+                drush @xxx install 
+
+    (where xxx is whatever you set the alias to)
+
+6. **If you in your install script havent added password for mysql it wont work, then simply add that!**
+
+### Use Nosh vagrantify on “non-vagrantified” projects
+
+1. Clone that project
+2. Use nosh vagrantify and specify everything with the different flags:
+
+                nosh vagrantify --help
+
+IF you intend to use the script to create drushalias the webroot needs to be set to “/srv/www/xxx” where xxx is the projectnumber
+
+3. When done you will have manifests and a VagrantFile and a .vagrantfile.
+4. Commit that shit to the repo and the next happy user will just be able to perform the
