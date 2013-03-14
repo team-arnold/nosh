@@ -96,7 +96,7 @@ Download the private vagrant ssh key [here](https://raw.github.com/mitchellh/vag
 That is were you will pull down your projects**
 
 ### Install Nosh
-* Follow the above install instructions
+* Follow the above [install instructions](https://github.com/team-arnold/nosh#nodestream-shell)
 
 ### Preinstallation for Team Arnold, if you want to contribute to [repo](https://github.com/team-arnold/nosh) If not, skip to the next step
 * We need to generate a unique SSH key for our second GitHub account.
@@ -151,9 +151,13 @@ add the following:
 
                 ./build
 
-* For usage of the drush-alias you simply typ "drush" adding “@xxx” after drush. ex; 
+* We use the drush-alais because we want to do all of our work in one place, ie. not ssh in and out of the vagrant-box
 
-                drush @257 cc all
+* For usage of the drush-alias you simply type "drush" adding “@xxx” after drush. ex; 
+
+                drush @257 status
+
+* Now, try the above command!
 
 * For install type: 
         
