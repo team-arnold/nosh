@@ -46,8 +46,8 @@ NodeStream shell is a set of tools that can be used to easily get going with dev
 
 ! don't forget to stop the initial Vagrant box and optionally destroy it
 
-### Mac OS X Nosh install helper script **ALERT** For this to work with team-arnold/nosh you may will ahve to change the script and change githup.com/WKLive/nosh to github.com/team-arnold/nosh
-Can be found [here](https://github.com/sjugge/mac_setup/blob/master/nosh_setup.sh). This script will guide you through setting up Nosh on Mac OS X.
+### Mac OS X Nosh install helper script 
+Can be found [here](https://github.com/team-arnold/nosh/blob/master/nosh_setup.sh). This script will guide you through setting up Nosh on Mac OS X.
 A more streamlined version that supports Homebrew installs of Drush and Composer, as well as a helper script for Linux is on the way...
 
 ## Access and Credentials
