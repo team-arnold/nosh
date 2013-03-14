@@ -1,6 +1,6 @@
-# NodeStream Shell
+# [Nosh - The Arnold way](https://github.com/team-arnold/nosh#nosh---the-arnold-way-1)
 
-# [Nosh - The Arnold way](https://github.com/team-arnold/nosh#nosh---the-arnold-way)
+# NodeStream Shell
 
 NodeStream shell is a set of tools that can be used to easily get going with developing NodeStream-based profiles and projects.
 
