@@ -108,6 +108,9 @@ Download the private vagrant ssh key [here](https://raw.github.com/mitchellh/vag
 
 # Nosh - The Arnold way
 
+**ALERT: For "The Arnold way" to work your workspace will be: /home/user/projects
+That is were you will pull down your project**
+
 ### Install Nosh
 * Follow the above install instructions
 
