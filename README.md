@@ -172,6 +172,11 @@ add the following:
                 nosh vagrantify --help
 
 * For a team arnold member those flags would be:
+
+                nosh vagrantify --webroot="." --nfsroot="/srv/www/xxx" --hostname="projectname" --ip="192.168.xx.x"
+
+Where xxx represents the projectnumber
+
 If you intend to use the script to create drushalias the webroot needs to be set to “/srv/www/xxx” where xxx is the projectnumber
 
 * When done you will have manifests and a VagrantFile and a .vagrantfile.
