@@ -179,6 +179,8 @@ add the following:
 
 * **If you in your install script havent added password for mysql it wont work, then simply add that!**
 
+* To use hosts and get to the site you need to symlink the vhostfile to /etc/apache2/sites-available and then a2ensite loc.whatever.se and then service apache2 reload
+
 ### Use Nosh vagrantify on “non-vagrantified” projects
 
 * Clone that project
