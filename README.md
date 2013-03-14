@@ -103,3 +103,46 @@ Download the private vagrant ssh key [here](https://raw.github.com/mitchellh/vag
                 cd foo_bar
                 vagrant up
 
+
+### Nosh - The Arnold way
+
+## Install Nosh
+* Follow the above install instructions
+
+## Preinstallation for Team Arnold, if you want to contribute to [repo](https://github.com/team-arnold/nosh)
+1. We need to generate a unique SSH key for our second GitHub account.
+                
+                ssh-keygen -t rsa -C "team-arnold"
+
+2. Now add your key to the team-arnold account at github. Login credentials are found in our secret file at the team docs. Simply “less” the .pub-key and att it under the account settings.
+
+3. Now we need a way to specify when we wish to push to our personal account, and when we should instead push to our company account. To do so, let’s edit the config file.
+
+
+
+                cd /home/user/.ssh
+                sudo nano config
+
+add the following:
+                
+                #Default Github
+                Host github.com
+                        Hostname github.com
+                        User     git
+                        IdentityFile ~/.ssh/id_dsa
+
+                Host github-team-arnold
+                        Hostname github.com
+                        User     git
+                        IdentityFile ~/.ssh/id_rsa_team_arnold
+
+4. Time to try it out. Clone the testdir and make a commit:
+
+                git clone git@github.com:team-arnold/test.git
+                nano README.md
+
+5. Add that and write a funny commit message and push it like its hot!
+
+## Installation on a project allready vagrantified
+
+1. Get
