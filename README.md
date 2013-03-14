@@ -92,12 +92,12 @@ Download the private vagrant ssh key [here](https://raw.github.com/mitchellh/vag
 # Nosh - The Arnold way
 
 **ALERT: For "The Arnold way" to work your workspace will be: /home/user/projects
-That is were you will pull down your project**
+That is were you will pull down your projects**
 
 ### Install Nosh
 * Follow the above install instructions
 
-### Preinstallation for Team Arnold, if you want to contribute to [repo](https://github.com/team-arnold/nosh)
+### Preinstallation for Team Arnold, if you want to contribute to [repo](https://github.com/team-arnold/nosh) If not, skip to the next step
 * We need to generate a unique SSH key for our second GitHub account.
                 
                 ssh-keygen -t rsa -C "team-arnold"
@@ -131,7 +131,7 @@ add the following:
 
 * Add that and write a funny commit message and push it like its hot!
 
-### Installation on a project allready vagrantified
+### Installation on a project already vagrantified
 
 * Get a drush alias to enable drush access from your local environment
 * run the script nosh_key_setup.sh found in this repo to download the ssh-key for vagrant
@@ -171,7 +171,8 @@ add the following:
 
                 nosh vagrantify --help
 
-IF you intend to use the script to create drushalias the webroot needs to be set to “/srv/www/xxx” where xxx is the projectnumber
+* For a team arnold member those flags would be:
+If you intend to use the script to create drushalias the webroot needs to be set to “/srv/www/xxx” where xxx is the projectnumber
 
 * When done you will have manifests and a VagrantFile and a .vagrantfile.
 * Commit that shit to the repo and the next happy user will just be able to perform the [previous instructions](https://github.com/team-arnold/nosh#installation-on-a-project-allready-vagrantified)
