@@ -184,4 +184,6 @@ add the following:
 IF you intend to use the script to create drushalias the webroot needs to be set to “/srv/www/xxx” where xxx is the projectnumber
 
 3. When done you will have manifests and a VagrantFile and a .vagrantfile.
-4. Commit that shit to the repo and the next happy user will just be able to perform the
+4. Commit that shit to the repo and the next happy user will just be able to perform the [previous instructions](https://github.com/team-arnold/nosh#installation-on-a-project-allready-vagrantified)
+
+Enjoy folks!
