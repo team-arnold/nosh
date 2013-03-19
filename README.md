@@ -146,7 +146,7 @@ add the following:
 
                 vagrant up
 
-    and all the puppet modules and sweet stuff for the box will be created for you! (Ununtu Linux: NFS mount do not work on encrypted home folders. Set up /project somewhere else.)
+    and all the puppet modules and sweet stuff for the box will be created for you! (Ubuntu: NFS mount do not work on encrypted home folders. Set up project folder somewhere else.)
 * For build simply go to where your buildscript is and:
 
                 ./build
