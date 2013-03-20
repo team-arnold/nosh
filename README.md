@@ -17,7 +17,7 @@ That is were you will pull down your projects**
 
 
 
-                cd /home/user/.ssh
+                cd ~/.ssh
                 sudo nano config
 
 add the following:
@@ -38,7 +38,7 @@ add the following:
                 git clone git@github.com:team-arnold/test.git
                 nano README.md
 
-* Add that and write a funny commit message and push it like its hot!
+* Add that and write a funny commit message and push it like it's hot!
 
 ### Installation on a project already vagrantified
 
@@ -46,7 +46,7 @@ add the following:
 
                 ./site_alias.sh 257 25.7
 
-* run the script nosh_key_setup.sh found in this repo to download the ssh-key for vagrant
+* Run the script nosh_key_setup.sh found in this repo to download the ssh-key for vagrant
 * **ALERT: By whatnot reason this key fails on my computer, I just “vagrant ssh” and add one of my pubkeys to authorized_keys and everything works dandy fine!**
 
 * Create a directory for your projects and Clone the 257 repo for testing!
@@ -73,17 +73,24 @@ add the following:
  
     (observe that we have specified a password to the root mysql user, this is standard on new mysql versions)
 
-* **If you in your install script havent added password for mysql it wont work, then simply add that!**
+* To use hosts on your local machine and get to the site you need to ssh into vagrant and symlink the vhostfile to /etc/apache2/sites-available and then a2ensite loc.whatever.se and then service apache2 reload:
 
-* To use hosts and get to the site you need to symlink the vhostfile to /etc/apache2/sites-available and then a2ensite loc.whatever.se and then service apache2 reload
-* Observe that on project without installscript, such as bostadsrätterna, you will have to create the database and user in mysql
+                vagrant ssh
+                cd /etc/apache2/sites-availible
+                sudo ln -s /path/to/vhost
+                sudo a2ensite vhostname
+                sudo service apache2 reload
 
+
+* Observe that on project without installscript, such as bostadsrätterna, you will have to create the database and user in mysql on your vagrantbox
+
+                vagrant ssh
                 mysql -uroot -ppassword
                 mysql> create database databasename;
                 mysql> GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON databasename.* TO 'username'@'localhost' IDENTIFIED BY 'password';
                 mysql> exit;
 
-* Then load a database:
+* Then load a database on the vagrantbox:
 
                 mysql -uroot -ppassword databasename < database.mysql
 
