@@ -69,9 +69,9 @@ add the following:
 
 * For install type: 
         
-                drush @xxx install 
-
-    (where xxx is whatever you set the alias to)
+                drush @257 -v si habilitering --db-url=mysql://root:password@localhost/257_db1 -y
+ 
+    (observe that we have specified a password to the root mysql user, this is standard on new mysql versions)
 
 * **If you in your install script havent added password for mysql it wont work, then simply add that!**
 
