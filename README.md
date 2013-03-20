@@ -76,6 +76,17 @@ add the following:
 * **If you in your install script havent added password for mysql it wont work, then simply add that!**
 
 * To use hosts and get to the site you need to symlink the vhostfile to /etc/apache2/sites-available and then a2ensite loc.whatever.se and then service apache2 reload
+* Observe that on project without installscript, such as bostadsrätterna, you will have to create the database and user in mysql
+
+                mysql -uroot -ppassword
+                mysql> create database databasename;
+                mysql> GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON databasename.* TO 'username'@'localhost' IDENTIFIED BY 'password';
+                mysql> exit;
+
+* Then load a database:
+
+                mysql -uroot -ppassword databasename < database.mysql
+
 
 ### Use Nosh vagrantify on “non-vagrantified” projects
 
