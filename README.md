@@ -3,6 +3,8 @@
 **ALERT: For "The Arnold way" to work your workspace will be: ~/projects
 That is were you will pull down your projects**
 
+* There are som usefull scripts in this repo, check them out!
+
 ### Install Nosh
 * Follow the [install instructions](https://github.com/team-arnold/nosh#nodestream-shell)
 
