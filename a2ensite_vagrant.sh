@@ -17,9 +17,10 @@ vhosts=$(ssh vagrant@${ip} "cd /srv/www/*/vhosts/; ls")
 
 echo "# Required setup variable"
 echo "Which vhost file do you want to enable?"
+echo "Simply type the one you want and press 'enter'"
+echo "e.g. loc.anysite.se"
 echo "The following are available:"
 echo "${vhosts}"
-echo "e.g. loc.anysite.se"
 read -e VHOSTFILE
 
 ssh vagrant@${ip} "cd /etc/apache2/sites-available/; sudo ln -s /srv/www/${project}/vhosts/${VHOSTFILE}"
